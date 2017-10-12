@@ -77,7 +77,7 @@ autoUpdater.on('update-not-available', (info) => {
   sendStatusToWindow('Update not available.');
 })
 autoUpdater.on('error', (err) => {
-  sendStatusToWindow('Error in auto-updater.');
+  sendStatusToWindow('Error in auto-updater.' + err);
 })
 autoUpdater.on('download-progress', (progressObj) => {
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
@@ -130,5 +130,7 @@ autoUpdater.on('update-downloaded', (info) => {
 })
 
 app.on('ready', function()  {
+  const feedUrl = `http://192.168.0.144:8080`;
+  autoUpdater.setFeedURL(feedUrl);
   autoUpdater.checkForUpdates();
 });
