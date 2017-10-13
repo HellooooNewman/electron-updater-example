@@ -130,7 +130,7 @@ autoUpdater.on('update-downloaded', (info) => {
 })
 
 app.on('ready', function()  {
-  const feedUrl = `http://192.168.0.144:8080`;
+  const feedUrl = `http://127.0.0.1:8080`;
   autoUpdater.setFeedURL(feedUrl);
   autoUpdater.checkForUpdates();
 });
