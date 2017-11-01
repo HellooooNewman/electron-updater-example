@@ -33,7 +33,7 @@
       ]
     },
     "nsis": {
-      "perMachine": true
+      "perMachine": false
     }
   }
 }
